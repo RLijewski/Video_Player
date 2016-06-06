@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  padding: 2.5% 0;
+}
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+  background: #fff;
+}
+
+#video-content {
+  position: relative;
+}
+
+#main-video {
+  width: 100%;
+  padding: 10px 10px 0;
+}
+
+#control-bar {
+  background: red;
+  position: absolute;
+  bottom: 4px;
+  left: 10px;
+  height: 40px;
+  width: calc(100% - 20px);
+}
+
+#video-controls {
+  width: 50%;
+  margin: auto;
+}
+
+.video-button {
+  border: none;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  margin-top: 5px;
+  background: transparent;
+}
+
+.video-button img {
+  height: 22px;
+  width: 22px;
+  margin-top: 4px;
+}
+
+.container {
+  padding: 0 30px 20px;
+}
