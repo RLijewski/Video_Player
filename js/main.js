@@ -26,7 +26,7 @@ window.onload = function() {
   // Bars
   var progressBar = document.getElementById("progress-bar");
   var volumeBar = document.getElementById("volume-bar");
-  var prgress = document.getElementById("progress");
+  var progress = document.getElementById("progress");
 
   // Video Controls
   var videoControls = document.getElementById("video-controls");
@@ -37,6 +37,7 @@ window.onload = function() {
 
   // Format videoTime
   function formatTime(seconds) {
+    var minutes;
     minutes = Math.floor(seconds / 60);
     minutes = (minutes >= 10) ? minutes : "0" + minutes;
     seconds = Math.floor(seconds % 60);
@@ -46,7 +47,7 @@ window.onload = function() {
 
   // Event listener for the play/pause button
   playButton.addEventListener("click", function() {
-    if (video.paused == true) {
+    if (video.paused === true) {
       // Play the video
       video.play();
       // Update the button img to pauseIcon
@@ -61,7 +62,7 @@ window.onload = function() {
 
   // Event listener for the mute button
   muteToggle.addEventListener("click", function() {
-    if (video.muted == false) {
+    if (video.muted === false) {
       // Mute the video
       video.muted = true;
       // Update the button icon to volumeOffIcon
@@ -80,12 +81,12 @@ window.onload = function() {
 
   // Event listener for the full-screen button
   fullScreenButton.addEventListener("click", function() {
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.mozRequestFullScreen) {
-      video.mozRequestFullScreen(); // Firefox
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen(); // Chrome and Safari
+    if (videoContainer.requestFullscreen) {
+      videoContainer.requestFullscreen();
+    } else if (videoContainer.mozRequestFullScreen) {
+      videoContainer.mozRequestFullScreen(); // Firefox
+    } else if (videoContainer.webkitRequestFullscreen) {
+      videoContainer.webkitRequestFullscreen(); // Chrome and Safari
     }
   });
 
@@ -226,4 +227,4 @@ window.onload = function() {
       transcriptSection[15].style.color = "black";
     }
   });
-}
+};
